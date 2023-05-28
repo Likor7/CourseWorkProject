@@ -19,7 +19,7 @@ The HealthcareApp class resides in the ObserverPattern package, which encompasse
 Overall, the HealthcareApp class represents a healthcare application that integrates and coordinates the activities of patients, doctors, nurses, and anesthetists. It serves as a platform for managing patient information, facilitating communication between healthcare professionals, and promoting effective healthcare delivery within the application.
 "
 Class {
-	#name : #HealthcareApp,
+	#name : #HealthcareApplication,
 	#superclass : #Object,
 	#instVars : [
 		'patient',
@@ -31,24 +31,24 @@ Class {
 }
 
 { #category : #changer }
-HealthcareApp >> changePatientBloodPressure: aNumber [
+HealthcareApplication >> changePatientBloodPressure: aNumber [
     patient bloodPressure: aNumber.
 
 ]
 
 { #category : #changer }
-HealthcareApp >> changePatientBodyTemperature: aNumber [
+HealthcareApplication >> changePatientBodyTemperature: aNumber [
     patient bodyTemperature: aNumber.
 ]
 
 { #category : #changer }
-HealthcareApp >> changePatientPulse: aNumber [
+HealthcareApplication >> changePatientPulse: aNumber [
     patient pulse: aNumber.
 
 ]
 
 { #category : #initialization }
-HealthcareApp >> initialize [
+HealthcareApplication >> initialize [
     super initialize.
     patient := Patient new.
     doctor := Doctor new.
