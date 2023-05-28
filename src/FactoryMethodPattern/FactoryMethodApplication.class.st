@@ -26,6 +26,15 @@ FactoryMethodApplication >> initialize [
     factoryMethodDataProcessor := FactoryMethodDataProcessor new.
 ]
 
+{ #category : #running }
+FactoryMethodApplication >> run [
+	| notsortedData sortedData |
+	notsortedData := Array withAll: #( 5 3 8 4 9 1 6 2 73333 ).
+	sortedData := self
+		              runWithSortAlgorithm: 'BubbleSort'
+		              inputData: notsortedData
+]
+
 { #category : #run }
 FactoryMethodApplication >> runWithSortAlgorithm: algorithmType inputData: inputData [
     | sortedData |

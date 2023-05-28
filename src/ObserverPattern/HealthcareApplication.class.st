@@ -58,3 +58,12 @@ HealthcareApplication >> initialize [
     patient addObserver: nurse.
     patient addObserver: anesthetist.
 ]
+
+{ #category : #running }
+HealthcareApplication >> run [
+	self changePatientPulse: 80.
+
+	self changePatientBloodPressure: 120.
+
+	self changePatientBodyTemperature: 37.
+]

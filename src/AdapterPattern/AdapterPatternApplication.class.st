@@ -35,6 +35,21 @@ AdapterPatternApplication >> makePayment: aPayment [
     paymentProcessor processPayment: aPayment
 ]
 
+{ #category : #running }
+AdapterPatternApplication >> run [
+	| aPayment |
+	aPayment := Payment new.
+	aPayment amount: 100.0.
+	aPayment currency: 'USD'.
+
+	self setPaymentSystem: PayPal new.
+	self makePayment: aPayment.
+
+	"Змінити систему оплати на Stripe і зробити платіж"
+	self setPaymentSystem: Stripe new.
+	self makePayment: aPayment.
+]
+
 { #category : #initialization }
 AdapterPatternApplication >> setPaymentSystem: aPaymentSystem [
     paymentProcessor paymentSystem: aPaymentSystem.
